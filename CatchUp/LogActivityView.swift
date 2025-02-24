@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct LogActivityView: View {
+    @State private var selectedDate: Date = Date()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("What did you do?")
+                .fontWeight(.heavy)
+                .font(.system(size: 32))
+            
+            Form {
+                Section(header: Text("test")) {
+                }
+                Section{
+                    DatePicker("", selection: $selectedDate)
+                }
+            }
+        }
     }
+       //.padding()
 }
 
 #Preview {

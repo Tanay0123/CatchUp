@@ -97,16 +97,16 @@ struct LogContactView_: View {
                 
                 // Right Arrow Button
                 Button(action: {}) {
-                    Image(systemName: "arrow.right.circle.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.blue)
+                        Image(systemName: "arrow.right.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.bottom)
                 }
-                .padding(.bottom)
             }
         }
     }
-}
 
 
 #Preview {

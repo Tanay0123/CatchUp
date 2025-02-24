@@ -10,15 +10,14 @@ import SwiftUI
 struct LogActivityView: View {
     // MARK: - Properties
     @Environment(\.dismiss) private var dismiss
-    @State private var catchUpType:String = ""
+//    @Binding private var isPresented:Bool
     
     // MARK: - Body
     var body: some View {
         
-        NavigationStack {
             Spacer()
             NavigationLink {
-                LogActivityView()
+                LogFeelingView().navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
                     .fontDesign(.rounded)
@@ -27,10 +26,34 @@ struct LogActivityView: View {
                     .frame(maxWidth: .infinity)
             }
             .padding()
+            .foregroundStyle(Color.buttonText)
             .buttonStyle(.bordered)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
-        }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    
+                    Button {
+                        // 3
+                        dismiss()
+                        
+                    } label: {
+                        // 4
+                        
+                            
+                            Image(systemName: "chevron.left")
+                            
+                            
+                        
+                    }.buttonStyle(.bordered)
+                        .foregroundStyle(Color.buttonText)
+                        .fontWeight(.medium)
+                        .fontDesign(.rounded)
+                        
+                        .clipShape(Circle())
+                }
+            }
+        
     }
 }
 #Preview {

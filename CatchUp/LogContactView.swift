@@ -10,13 +10,14 @@ import SwiftUI
 struct LogContactView: View {
     // MARK: - Properties
     @Environment(\.dismiss) private var dismiss
+//    @Binding private var isPresented:Bool
     // MARK: - Body
     var body: some View {
         
         NavigationStack {
             Spacer()
             NavigationLink {
-                LogActivityView()
+                LogActivityView().navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
                     .fontDesign(.rounded)
@@ -25,14 +26,39 @@ struct LogContactView: View {
                     .frame(maxWidth: .infinity)
             }
             .padding()
+            .foregroundStyle(Color(.buttonText))
             .buttonStyle(.bordered)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
+//            .navigationTitle("Add Catch Up")
+//            .navigationBarTitleDisplayMode(.inline)
+            
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    
+//                    Button {
+//                        // 3
+//                        dismiss()
+//                        
+//                    } label: {
+//                        // 4
+//                        
+//                            
+//                            Image(systemName: "xmark")
+//                            
+//                            
+//                        
+//                    }.buttonStyle(.bordered)
+//                        .foregroundStyle(Color.buttonText)
+//                        .fontWeight(.medium)
+//                        .fontDesign(.rounded)
+//                        
+//                        .clipShape(Circle())
+//                }
+//            }
         }
     }
 }
-// .navigationBarBackButtonHidden(true)
-// - Add button with sf symbols x topbar (leading)
 
 #Preview {
     LogContactView()

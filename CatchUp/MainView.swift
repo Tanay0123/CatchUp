@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     // MARK: - Properties
     @State private var isPresented:Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     
     // MARK: - Body
@@ -26,7 +27,8 @@ struct MainView: View {
                 .frame(maxWidth: .infinity)
         }
         .padding()
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
+        .foregroundStyle(Color(.buttonText))
         .buttonBorderShape(.capsule)
         .controlSize(.large)
         
@@ -34,6 +36,7 @@ struct MainView: View {
             LogContactView()
                 // Corner radius
                 .presentationCornerRadius(25)
+//                .presentationDragIndicator(.visible)
                 .presentationDetents([.large])
         }
     }

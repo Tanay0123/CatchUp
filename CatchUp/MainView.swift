@@ -8,11 +8,37 @@
 import SwiftUI
 
 struct MainView: View {
+    // MARK: - Properties
+    @State private var isPresented:Bool = false
+    
+    
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Spacer()
+        
+        Button {
+            isPresented.toggle()
+        } label: {
+            Text("Add")
+                .fontDesign(.rounded)
+                .font(.title2)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity)
+        }
+        .padding()
+        .buttonStyle(.borderedProminent)
+        .buttonBorderShape(.capsule)
+        .controlSize(.large)
+        
+        .sheet(isPresented: $isPresented){
+            LogContactView()
+                // Corner radius
+                .presentationCornerRadius(25)
+                .presentationDetents([.large])
+        }
     }
 }
-
+         
 #Preview {
     MainView()
 }

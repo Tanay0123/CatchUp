@@ -8,10 +8,31 @@
 import SwiftUI
 
 struct LogContactView: View {
+    // MARK: - Properties
+    @Environment(\.dismiss) private var dismiss
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            Spacer()
+            NavigationLink {
+                LogActivityView()
+            } label: {
+                Text("Next")
+                    .fontDesign(.rounded)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity)
+            }
+            .padding()
+            .buttonStyle(.bordered)
+            .buttonBorderShape(.capsule)
+            .controlSize(.large)
+        }
     }
 }
+// .navigationBarBackButtonHidden(true)
+// - Add button with sf symbols x topbar (leading)
 
 #Preview {
     LogContactView()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogReflectionView: View {
     // MARK: - Properties
-//    @Binding private var isPresented:Bool
+    @Binding var isPresented:Bool
     @Environment(\.dismiss) private var dismiss
     
     
@@ -18,8 +18,7 @@ struct LogReflectionView: View {
         
             Spacer()
             Button {
-                // Save reflection
-//                isPresented.toggle()
+                isPresented.toggle()
             } label: {
                 Text("Done")
                     .fontDesign(.rounded)
@@ -58,6 +57,6 @@ struct LogReflectionView: View {
         
     }
 }
-#Preview {
-    LogFeelingView()
-}
+//#Preview {
+//    LogFeelingView(isPresented: $isPresented)
+//}

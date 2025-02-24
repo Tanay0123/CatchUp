@@ -33,7 +33,7 @@ struct MainView: View {
         .controlSize(.large)
         
         .sheet(isPresented: $isPresented){
-            LogContactView()
+            LogContactView(isPresented: $isPresented)
                 // Corner radius
                 .presentationCornerRadius(25)
 //                .presentationDragIndicator(.visible)
@@ -42,6 +42,6 @@ struct MainView: View {
     }
 }
          
-#Preview {
-    MainView()
-}
+//#Preview {
+//    MainView()
+//}

@@ -10,14 +10,14 @@ import SwiftUI
 struct LogFeelingView: View {
     // MARK: - Properties
     @Environment(\.dismiss) private var dismiss
-//    @Binding private var isPresented:Bool
+    @Binding var isPresented:Bool
     
     // MARK: - Body
     var body: some View {
         
             Spacer()
             NavigationLink {
-                LogReflectionView().navigationBarBackButtonHidden(true)
+                LogReflectionView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
                     .fontDesign(.rounded)
@@ -56,6 +56,6 @@ struct LogFeelingView: View {
         
     }
 }
-#Preview {
-    LogFeelingView()
-}
+//#Preview {
+//    LogFeelingView(isPresented: $isPresented)
+//}

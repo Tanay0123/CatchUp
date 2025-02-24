@@ -10,14 +10,14 @@ import SwiftUI
 struct LogContactView: View {
     // MARK: - Properties
     @Environment(\.dismiss) private var dismiss
-//    @Binding private var isPresented:Bool
+    @Binding var isPresented:Bool
     // MARK: - Body
     var body: some View {
         
         NavigationStack {
             Spacer()
             NavigationLink {
-                LogActivityView().navigationBarBackButtonHidden(true)
+                LogActivityView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
                     .fontDesign(.rounded)
@@ -60,6 +60,6 @@ struct LogContactView: View {
     }
 }
 
-#Preview {
-    LogContactView()
-}
+//#Preview {
+//    LogContactView(isPresented: $isPresented)
+//}

@@ -20,7 +20,7 @@ struct LogReflection: View {
                       }
                 
                 .padding(.horizontal, 30)
-                .padding(.top, 40)
+                .padding(.top, 40).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 
                 Spacer()
                 
@@ -64,7 +64,7 @@ struct LogReflection: View {
                 }
                 
                 .padding(.horizontal, 30)
-                .padding(.bottom, 80)
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/) .padding(.bottom, 80)
                
             }
         }

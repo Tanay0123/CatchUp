@@ -89,6 +89,8 @@ struct LogContactView_: View {
                       Toggle("", isOn: $isChecked)
                                 .padding()
                         }
+                        .toggleStyle(.switch)
+//                        .toggleStyle(.CheckboxToggleStyle)
                         
                         .padding(.horizontal)
                     }

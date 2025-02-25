@@ -21,14 +21,22 @@ struct Login: View {
                     Image("CatchUp-02")
                         .resizable()
                         .frame(width: 300, height: 300)
-                        .padding()
+                        .padding(.vertical, 30)
+                    Text("CatchUp")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.blue)
                     HStack {
-                        RoundedRectangle(cornerRadius: 15)
+                       
+                        RoundedRectangle(cornerRadius: 10)
                             .fill(Color.white)
-                            .frame(height: 50)
+                            .frame(width: 400, height: 150)
                             .overlay(
                                 HStack {
-                                    TextField("ID", text: $Id)
+                                    Text("Reflect on your relationships and emotions over time.")
+                                        .font(.title3)
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(.gray)
                                         .padding(.leading)
                                     Spacer()
                                 }
@@ -38,33 +46,24 @@ struct Login: View {
                     }
                     .padding(.horizontal, 40)
                     
-                    HStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.white)
-                            .frame(height: 50)
-                            .overlay(
-                                HStack {
-                                    TextField("Password", text: $Password)
-                                        .padding(.leading)
-                                    Spacer()
-                                }
-                                    .padding(.horizontal)
-                            )
-                        
-                    }
+                    
+                    
+                    
                     .padding(.horizontal, 40)
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 30)
                     NavigationLink {
                         LogContactView_()
                     } label: {
-                        Text("Log in!")
+                        Text("START!")
                     }
                     .buttonStyle(.bordered)
+                    .font(.title2)
+                }
                 }
             }
         }
     }
-}
+
 
 
 

@@ -10,9 +10,33 @@
 		5D4A4C192D6BE9B900EBFAC1 /* CatchUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A6988A8B2D6D419300FC0D7A /* Exceptions for "CatchUp" folder in "CatchUp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				.swift,
+			);
+			target = 5D4A4C182D6BE9B900EBFAC1 /* CatchUp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		A6988A8C2D6D419300FC0D7A /* Exceptions for "CatchUp" folder in "Compile Sources" phase from "CatchUp" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 5D4A4C152D6BE9B900EBFAC1 /* Sources */;
+			membershipExceptions = (
+				.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5D4A4C1B2D6BE9B900EBFAC1 /* CatchUp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A6988A8B2D6D419300FC0D7A /* Exceptions for "CatchUp" folder in "CatchUp" target */,
+				A6988A8C2D6D419300FC0D7A /* Exceptions for "CatchUp" folder in "Compile Sources" phase from "CatchUp" target */,
+			);
 			path = CatchUp;
 			sourceTree = "<group>";
 		};

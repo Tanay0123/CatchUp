@@ -11,7 +11,8 @@ import SwiftUI
 struct CatchUpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView(reflection: arrayOfReflections[0])
+            MyDashboardView()
         }
     }
 }

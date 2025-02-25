@@ -13,6 +13,8 @@ struct LogContactView_: View {
     @State private var contacts: [String] = ["Olivia Lee", "Ethan Park", "Mia Chen", "Noah Johnson", "Ava Kim", "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott"]
     
     @State private var selectedContacts: Set<String> = []
+    @State private var isChecked = false
+
     
     
     var body: some View {
@@ -81,9 +83,11 @@ struct LogContactView_: View {
                             Text(contact)
                                 .font(.body)
                             Spacer()
-                            Image(systemName: "squareshape")
-                                .foregroundColor(.gray)
-                                .padding(.trailing)
+                           // Image(systemName: "squareshape")
+                            //    .foregroundColor(.gray)
+                              //  .padding(.trailing)
+                      Toggle("", isOn: $isChecked)
+                                .padding()
                         }
                         
                         .padding(.horizontal)

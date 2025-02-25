@@ -16,9 +16,65 @@ struct LogReflectionView: View {
     // MARK: - Body
     var body: some View {
         
+        VStack {
+            HStack {
+                Text("Excited because...")
+                Spacer()
+                Image(systemName: "pencil")
+                    .foregroundColor(.blue)
+            }
+            
+            .padding(.horizontal, 30)
+            .padding(.top, 40)
+            
             Spacer()
+            
+            HStack {
+                NavigationLink {
+                    Text("This is camera page")
+                } label: { Image(systemName: "plus.circle.dashed")
+                }
+                Spacer()
+                
+                NavigationLink {
+                    Text("This is camera page")
+                } label: {
+                    Image(systemName: "camera")
+                }
+                
+                Spacer()
+                
+                NavigationLink {
+                    Text("This is camera page")
+                } label: {
+                    Image(systemName: "photo.on.rectangle")
+                }
+                
+                Spacer()
+                
+                NavigationLink {
+                    Text("This is camera page")
+                } label: {
+                    Image(systemName: "waveform")
+                }
+                
+                Spacer()
+                
+                NavigationLink {
+                    Text("This is camera page")
+                } label: {
+                    Image(systemName: "microphone")
+                }
+                
+            }
+            
+            .padding(.horizontal, 30)
+            .padding(.bottom, 80)
+            
+            
             Button {
                 isPresented.toggle()
+                
             } label: {
                 Text("Done")
                     .fontDesign(.rounded)
@@ -41,19 +97,20 @@ struct LogReflectionView: View {
                     } label: {
                         // 4
                         
-                            
-                            Image(systemName: "chevron.left")
-                            
-                            
+                        
+                        Image(systemName: "chevron.left")
+                        
+                        
                         
                     }.buttonStyle(.bordered)
                         .foregroundStyle(Color.buttonText)
                         .fontWeight(.medium)
                         .fontDesign(.rounded)
-                        
+                    
                         .clipShape(Circle())
                 }
             }
+        }
         
     }
 }

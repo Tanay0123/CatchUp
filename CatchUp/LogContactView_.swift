@@ -10,7 +10,9 @@ import SwiftUI
 
 struct LogContactView_: View {
     @State private var searchText: String = ""
-    @State private var contacts: [String] = ["John Apple", "Elly Kim", "Linda", "Tanay", "Oscar", "Noor"]
+    @State private var contacts: [String] = ["Olivia Lee", "Ethan Park", "Mia Chen", "Noah Johnson", "Ava Kim", "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott"]
+    
+    @State private var selectedContacts: Set<String> = []
     
     
     var body: some View {
@@ -38,37 +40,37 @@ struct LogContactView_: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.orange)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 20)
                 
                 // Contact List Section
-                VStack {
-                    // Search Bar
-                    HStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.white)
-                            .frame(height: 40)
-                            .overlay(
-                                HStack {
-                                    TextField("Search Contact", text: $searchText)
-                                        .padding(.leading)
-                                    Spacer()
-                                    Image(systemName: "magnifyingglass")
-                                        .foregroundColor(.gray)
-                                        .padding(.trailing)
-                                }
-                                    .padding(.horizontal)
-                            )
-                        
-                        // Add (+) Button
-                        Button(action: {}) {
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    .padding()
+                HStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.white)
+                        .frame(height: 50)
+                        .overlay(
+                            HStack {
+                                TextField("Search Contact", text: $searchText)
+                                    .padding(.leading)
+                                Spacer()
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .padding(.trailing)
+                            }
+                                .padding(.horizontal)
+                        )
                     
+                    // Add (+) Button
+                    Button(action: {}) {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.blue)
+                    }
+                }
+                .padding(.horizontal, 40)
+                
+                ScrollView {
+        
                     // Contact List
                     ForEach(contacts, id: \.self) { contact in
                         HStack {
@@ -83,32 +85,33 @@ struct LogContactView_: View {
                                 .foregroundColor(.gray)
                                 .padding(.trailing)
                         }
+                        
                         .padding(.horizontal)
                     }
                     .padding(.bottom)
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: 500) // Set fixed height for scrollable box
                 .background(Color(red: 230/255, green: 245/255, blue: 255/255))
-                // Light blue background
                 .cornerRadius(20)
+                .padding(.horizontal)
                 .padding()
                 
                 Spacer()
                 
+                
+                
                 // Right Arrow Button
                 Button(action: {}) {
-                        Image(systemName: "arrow.right.circle.fill")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.blue)
-                    }
-                    .padding(.bottom)
+                    Image(systemName: "arrow.right.circle.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.blue)
                 }
+                .padding(.bottom)
             }
         }
     }
-
-
+}
 #Preview {
     LogContactView_()
 }

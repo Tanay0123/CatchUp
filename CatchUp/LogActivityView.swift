@@ -40,8 +40,10 @@ struct LogActivityView: View {
         
         VStack {
             Text("What did you do?")
+                .fontDesign(.rounded)
                 .fontWeight(.heavy)
                 .font(.system(size: 32))
+                .foregroundStyle(Color(.orange))
             
             Form {
                 
@@ -74,49 +76,51 @@ struct LogActivityView: View {
                     }
                 }
             }
-        }
-        
-        
-            Spacer()
-            NavigationLink {
-                LogFeelingView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
-            } label: {
-                Text("Next")
-                    .fontDesign(.rounded)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity)
-            }
-            .padding()
-            .foregroundStyle(Color.buttonText)
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.capsule)
-            .controlSize(.large)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    
-                    Button {
-                        // 3
-                        dismiss()
-                        
-                    } label: {
-                        // 4
-                        
-                            
-                            Image(systemName: "chevron.left")
-                            
-                            
-                        
-                    }
-                    
-                    .buttonStyle(.bordered)
-                        .foregroundStyle(Color.buttonText)
-                        .fontWeight(.medium)
+            .scrollContentBackground(.hidden)
+            
+            
+                Spacer()
+                NavigationLink {
+                    LogFeelingView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
+                } label: {
+                    Text("Next")
                         .fontDesign(.rounded)
-                        
-                        .clipShape(Circle())
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity)
                 }
-            }
+                .padding()
+                .foregroundStyle(Color.buttonText)
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
+                .controlSize(.large)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        
+                        Button {
+                            // 3
+                            dismiss()
+                            
+                        } label: {
+                            // 4
+                            
+                                
+                                Image(systemName: "chevron.left")
+                                
+                                
+                            
+                        }
+                        
+                        .buttonStyle(.bordered)
+                            .foregroundStyle(Color.buttonText)
+                            .fontWeight(.medium)
+                            .fontDesign(.rounded)
+                            
+                            .clipShape(Circle())
+                    }
+                }
+        }.background(Color.catchUpYellow.edgesIgnoringSafeArea(.all))
+
             
         
     }

@@ -15,46 +15,48 @@ struct MainView: View {
     
     // MARK: - Body
     var body: some View {
-        Spacer()
-        
-        Button {
-            isPresented.toggle()
-            arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: -1.0, journalEntry: "[BLANK]"))
-        } label: {
-            Text("Add")
-                .fontDesign(.rounded)
-                .font(.title2)
-                .fontWeight(.bold)
-                .frame(maxWidth: .infinity)
-        }
-        .padding()
-        .buttonStyle(.bordered)
-        .foregroundStyle(Color(.buttonText))
-        .buttonBorderShape(.capsule)
-        .controlSize(.large)
-        
-//        Button {
-//            ReflectionTimelineView()
-//        } label: {
-//            Text("Add")
-//                .fontDesign(.rounded)
-//                .font(.title2)
-//                .fontWeight(.bold)
-//                .frame(maxWidth: .infinity)
-//        }
-//        .padding()
-//        .buttonStyle(.bordered)
-//        .foregroundStyle(Color(.buttonText))
-//        .buttonBorderShape(.capsule)
-//        .controlSize(.large)
-        
-        .sheet(isPresented: $isPresented){
-            LogFriendView(isPresented: $isPresented)
+        VStack {
+            Spacer()
+            
+            Button {
+                isPresented.toggle()
+                arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: -1.0, journalEntry: "[BLANK]"))
+            } label: {
+                Text("Add")
+                    .fontDesign(.rounded)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity)
+            }
+            .padding()
+            .buttonStyle(.bordered)
+            .foregroundStyle(Color(.buttonText))
+            .buttonBorderShape(.capsule)
+            .controlSize(.large)
+            
+            //        Button {
+            //            ReflectionTimelineView()
+            //        } label: {
+            //            Text("Add")
+            //                .fontDesign(.rounded)
+            //                .font(.title2)
+            //                .fontWeight(.bold)
+            //                .frame(maxWidth: .infinity)
+            //        }
+            //        .padding()
+            //        .buttonStyle(.bordered)
+            //        .foregroundStyle(Color(.buttonText))
+            //        .buttonBorderShape(.capsule)
+            //        .controlSize(.large)
+            
+            .sheet(isPresented: $isPresented){
+                LogFriendView(isPresented: $isPresented)
                 // Corner radius
-                .presentationCornerRadius(25)
-//                .presentationDragIndicator(.visible)
-                .presentationDetents([.large])
-        }
+                    .presentationCornerRadius(25)
+                //                .presentationDragIndicator(.visible)
+                    .presentationDetents([.large])
+            }
+        }.background(Color.catchUpYellow.edgesIgnoringSafeArea(.all))
     }
 }
          

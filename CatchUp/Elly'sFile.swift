@@ -1,9 +1,10 @@
 //
-//  Elly'sFile.swift
+//  LogContactView.swift
 //  CatchUp
 //
-//  Created by Tanay Solanki on 24/2/2025.
+//  Created by Tanay Solanki on 26/2/2025.
 //
+
 
 //
 //  LogContactView_.swift
@@ -15,10 +16,56 @@
 
 import SwiftUI
 
-struct LogContactView_: View {
+struct LogContactView2: View {
     @State private var searchText: String = ""
-    @State private var contacts: [String] = ["John Apple", "Elly Kim", "Linda", "Tanay", "Oscar", "Noor"]
     
+    @State private var selectOlivia: Bool = false
+    @State private var selectEthan: Bool = false
+    @State private var selectNoah: Bool = false
+    @State private var selectAva: Bool = false
+    @State private var selectSophia: Bool = false
+    @State private var selectLiam: Bool = false
+    @State private var selectHenry: Bool = false
+    @State private var selectJoe: Bool = false
+    @State private var selectJohn: Bool = false
+    @State private var selectBart: Bool = false
+    
+    @State private var selectedNames: [String] = []
+    
+    func getSelectedFriends() -> [String] {
+        var selected: [String] = []
+        if selectOlivia {
+            selected.append("Olivia")
+        }
+        if selectEthan {
+            selected.append("Ethan")
+        }
+        if selectNoah {
+            selected.append("Noah")
+        }
+        if selectAva {
+            selected.append("Ava")
+        }
+        if selectSophia {
+            selected.append("Sophia")
+        }
+        if selectLiam {
+            selected.append("Liam")
+        }
+        if selectHenry {
+            selected.append("Henry")
+        }
+        if selectJoe {
+            selected.append("Joe")
+        }
+        if selectJohn {
+            selected.append("John")
+        }
+        if selectBart {
+            selected.append("Bart")
+        }
+        return selected
+    }
     
     var body: some View {
         ZStack {
@@ -45,65 +92,58 @@ struct LogContactView_: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.orange)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 20)
                 
                 // Contact List Section
-                VStack {
-                    // Search Bar
-                    HStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.white)
-                            .frame(height: 40)
-                            .overlay(
-                                HStack {
-                                    TextField("Search Contact", text: $searchText)
-                                        .padding(.leading)
-                                    Spacer()
-                                    Image(systemName: "magnifyingglass")
-                                        .foregroundColor(.gray)
-                                        .padding(.trailing)
-                                }
-                                    .padding(.horizontal)
-                            )
-                        
-                        // Add (+) Button
-                        Button(action: {}) {
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    .padding()
-                    
-                    // Contact List
-                    ForEach(contacts, id: \.self) { contact in
-                        HStack {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.blue)
-                            Text(contact)
-                                .font(.body)
-                            Spacer()
-                            Image(systemName: "squareshape")
-                                .foregroundColor(.gray)
-                                .padding(.trailing)
-                        }
-                        .padding(.horizontal)
-                    }
-                    .padding(.bottom)
+                HStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.white)
+                        .frame(height: 50)
+                        .overlay(
+                            HStack {
+                                TextField("Search Contact", text: $searchText)
+                                    .padding(.leading)
+                                Spacer()
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .padding(.trailing)
+                            }
+                                .padding(.horizontal)
+                        )
                 }
-                .frame(maxWidth: .infinity)
-                .background(Color(red: 230/255, green: 245/255, blue: 255/255))
-                // Light blue background
+                .padding(.horizontal, 40)
+                
+                Form {
+                    
+                    Section(header: Text("Your Top CatchUp")) {
+                        Toggle("Olivia", isOn: $selectOlivia)
+                        Toggle("Ethan", isOn: $selectEthan)
+                        Toggle("Noah", isOn: $selectNoah)
+                        Toggle("Ava", isOn: $selectAva)
+                        Toggle("Sophia", isOn: $selectSophia)
+                        Toggle("John", isOn: $selectJohn)
+                        Toggle("Henry", isOn: $selectHenry)
+                        Toggle("Joe", isOn: $selectJoe)
+                        Toggle("Liam", isOn: $selectLiam)
+                        Toggle("Bart", isOn: $selectBart)
+                        
+                        
+                    }
+                    .toggleStyle(.button)
+                }
+                .frame(maxWidth: .infinity, maxHeight: 400)
+                .scrollContentBackground(.hidden)
                 .cornerRadius(20)
+                .padding(.horizontal)
                 .padding()
                 
                 Spacer()
                 
                 // Right Arrow Button
-                Button(action: {}) {
+                Button {
+                    print(getSelectedFriends().joined(separator: ", "))
+                    
+                } label: {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
                         .frame(width: 50, height: 50)
@@ -115,8 +155,6 @@ struct LogContactView_: View {
     }
 }
 
-
 #Preview {
-    LogContactView_()
+    LogContactView2()
 }
-

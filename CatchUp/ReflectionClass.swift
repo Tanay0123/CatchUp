@@ -35,4 +35,5 @@ var arrayOfReflections: [ReflectionClass] = [
     ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
 ]
 
+// Later, should look into "data persistence"
 

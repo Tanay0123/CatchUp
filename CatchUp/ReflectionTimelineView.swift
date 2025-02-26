@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReflectionTimelineView: View {  
+struct ReflectionTimelineView: View {
     var body: some View {
         ZStack {
             VStack {

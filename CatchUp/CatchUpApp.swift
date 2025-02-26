@@ -11,7 +11,7 @@ import SwiftUI
 struct CatchUpApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LogActivityView()
         }
     }
 }

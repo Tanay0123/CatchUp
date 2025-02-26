@@ -12,21 +12,24 @@ struct LogActivityView: View {
     @State private var hangoutLength: String = ""
     private var length = ["Quick", "Medium", "Long"]
     @State private var activityType = [
-
-        "Outdoor Activities",
-        "Sports and Games",
+        
         "Arts and Crafts",
         "Cultural and Educational Events",
         "Dining Experiences",
-        "Music and Dance",
-        "Volunteering and Charity Work",
-        "Social Gatherings",
         "Fitness and Wellness",
-        "Travel and Adventure",
+        "Music and Dance",
+        "Outdoor Activities",
+        "Social Gatherings",
+        "Sports and Games",
         "Technology and Gaming",
+        "Travel and Adventure",
+        "Volunteering and Charity Work",
         "Other",
-        //FIXME: ADD YOUR OWN ACTIVITY
+        //FIXME: ADD YOUR OWN ACTIVITY: button to save user input into state variable array
+        
     ]
+    @State private var selectedActivity: String = "Arts and Crafts"
+    
     
     var body: some View {
         VStack {
@@ -36,9 +39,8 @@ struct LogActivityView: View {
             
             Form {
                 
-                Section (header: Text("When?")) {
-                    DatePicker("When?", selection: $selectedDate) //FIXME: ALIGN LEFT/CENTRE
-                }
+                Section {
+                        DatePicker("When?", selection: $selectedDate)                 }
                 Section (header: Text("How long for?")) {
                     Picker("Duration", selection: $hangoutLength) {
                         ForEach(length, id: \.self) {choice in
@@ -46,15 +48,15 @@ struct LogActivityView: View {
                         }
                     }
                     .pickerStyle(.wheel)
+                    .frame(height: 150)
                 }
                 Section (header: Text("What did you get up to?")) {
-                    Picker("Activity Type", selection: $activityType) {
-                        ForEach(activityType, id: \.self) {choice in
+                    Picker("Activity Type", selection: $selectedActivity) {
+                        ForEach(activityType, id: \.self) { choice in
                             Text(choice)
                         }
-
                     }
-                    
+                    //.pickerStyle(.inline)
                 }
             }
         }

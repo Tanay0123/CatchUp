@@ -142,8 +142,19 @@ struct LogContactView2: View {
                 // Right Arrow Button
                 HStack {
                     Button {
-                        print(getSelectedFriends().joined(separator: ", "))
+                        arrayOfReflections[arrayOfReflections.endIndex-1].friendName = getSelectedFriends().joined(separator: ", ")
                         
+                    } label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.bottom)
+                    .padding(.trailing)
+                    
+                    NavigationLink {
+                        LogActivityView()
                     } label: {
                         Image(systemName: "arrow.right.circle.fill")
                             .resizable()
@@ -151,10 +162,6 @@ struct LogContactView2: View {
                             .foregroundColor(.blue)
                     }
                     .padding(.bottom)
-                    
-//                    NavigationLink {
-//                        
-//                    }
                 }
             }
         }

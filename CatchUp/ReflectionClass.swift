@@ -14,25 +14,27 @@ import Foundation
     var duration: String
     var catchUpDate: Date // probably a unique datatype
     var catchUpTime: Date // probably a unique datatype
+    var activity: String
     var feelingSlide: Float
     var journalEntry: String
     
-    init(id: UUID, reflection: String, friendName: String, duration: String, catchUpDate: Date, catchUpTime: Date, feelingSlide: Float, journalEntry: String) {
+    init(id: UUID, reflection: String, friendName: String, duration: String, catchUpDate: Date, catchUpTime: Date, activity: String, feelingSlide: Float, journalEntry: String) {
         self.id = id
         self.reflection = reflection
         self.friendName = friendName
         self.duration = duration
         self.catchUpDate = catchUpDate
         self.catchUpTime = catchUpTime
+        self.activity = activity
         self.feelingSlide = feelingSlide
         self.journalEntry = journalEntry
     }
 }
 
 var arrayOfReflections: [ReflectionClass] = [
-    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, activity: "phone call", feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, activity: "coffee", feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, activity: "basketball", feelingSlide: 0.0, journalEntry: "Had a great time!"),
 ]
 
 // Later, should look into "data persistence"

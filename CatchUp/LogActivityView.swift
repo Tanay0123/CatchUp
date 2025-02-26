@@ -51,7 +51,7 @@ struct LogActivityView: View {
                 Form { //FIXME: make menu colors pale yellow
                     
                     Section (header: Text("1 - When?")){
-                        DatePicker("Select:", selection: $selectedDate)
+                        DatePicker("Select", selection: $selectedDate)
                     }
                     Section (header: Text("2 - How long for?")) {
                         Picker("Duration", selection: $selectedDuration) {
@@ -94,33 +94,49 @@ struct LogActivityView: View {
                     arrayOfReflections[arrayOfReflections.endIndex-1].catchUpDate = selectedDate
                 } label: {
                     Image(systemName: "1.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.blue)
                 }
                 Button {
 //                    print("\(selectedDuration)")
                     arrayOfReflections[arrayOfReflections.endIndex-1].duration = selectedDuration
                 } label: {
                     Image(systemName: "2.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.blue)
                 }
                 Button {
 //                    print("\(selectedActivity)")
                     arrayOfReflections[arrayOfReflections.endIndex-1].activity = selectedActivity
                 } label: {
                     Image(systemName: "3.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.blue)
                 }
             }
-            .padding(.top, 500)
+            .padding(.top, 530)
             HStack {
+//                NavigationLink {
+//                    LogContactView2()
+//                } label: {
+//                    Image(systemName: "arrow.left.circle.fill")
+//                        .resizable()
+//                        .frame(width: 50, height: 50)
+//                        .foregroundColor(.blue)
+//                }
+//                
                 NavigationLink {
-                    LogContactView2()
-                } label: {
-                    Image(systemName: "arrow.left.circle.fill")
-                }
-                
-                NavigationLink {
-                    ReflectionTimelineView()
+                    // ReflectionTimelineView()
+                    LogFeelingView()
                     //really should be logfeelings, but don't know what parametres need to be passed
                 } label: {
                     Image(systemName: "arrow.right.circle.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.blue)
                 }
             }
             .padding(.top, 700)

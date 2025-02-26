@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LogReflectionView: View {
     // MARK: - Properties
-    @Binding var isPresented:Bool
+//    @Binding var isPresented:Bool
     @State private var textInputFromUser: String = ""
-    @Environment(\.dismiss) private var dismiss
+//    @Environment(\.dismiss) private var dismiss
    
     @State private var isBold: Bool = false
     @State private var isUnderline: Bool = false
@@ -28,8 +28,12 @@ struct LogReflectionView: View {
                 HStack {
                     Text("Excited because...")
                     Spacer()
-                    Image(systemName: "book")
-                        .foregroundColor(.blue)
+                    NavigationLink {
+                        ReflectionTimelineView()
+                    } label: {
+                        Image(systemName: "book")
+                            .foregroundColor(.blue)
+                    }
                 }
                 .padding(.horizontal, 30)
                 .padding(.top, 40)
@@ -138,8 +142,8 @@ struct LogReflectionView: View {
                 
                 
                 Button {
-                    isPresented.toggle()
-                    
+//                    isPresented.toggle()
+                    arrayOfReflections[arrayOfReflections.endIndex-1].journalEntry = textInputFromUser
                 } label: {
                     Text("Done")
                         .fontDesign(.rounded)
@@ -152,37 +156,37 @@ struct LogReflectionView: View {
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
                 .controlSize(.large)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        
-                        Button {
-                            // 3
-                            dismiss()
-                            
-                        } label: {
-                            // 4
-                            
-                            
-                            Image(systemName: "chevron.left")
-                            
-                            
-                            
-                        }.buttonStyle(.bordered)
-                            .foregroundStyle(Color.buttonText)
-                            .fontWeight(.medium)
-                            .fontDesign(.rounded)
-                        
-                            .clipShape(Circle())
-                    }
-                }
+//                .toolbar {
+//                    ToolbarItem(placement: .navigationBarLeading) {
+//                        
+//                        Button {
+//                            // 3
+////                            dismiss()
+//                            
+//                        } label: {
+//                            // 4
+//                            
+//                            
+//                            Image(systemName: "chevron.left")
+//                            
+//                            
+//                            
+//                        }.buttonStyle(.bordered)
+//                            .foregroundStyle(Color.buttonText)
+//                            .fontWeight(.medium)
+//                            .fontDesign(.rounded)
+//                        
+//                            .clipShape(Circle())
+//                    }
+//                }
             }
             // .frame(maxWidth: .infinity, maxHeight: 500) // Set fixed height for scrollable box
-            .background(Color(.beigeBackground))
+            .background(Color(red: 250/255, green: 243/255, blue: 230/255))
         }
     }
 }
 
 #Preview {
-    LogReflectionView(isPresented: .constant(true))
+    LogReflectionView()
 }
 

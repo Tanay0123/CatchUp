@@ -16,11 +16,11 @@ import SwiftUI
 
 struct LogFeelingView: View {
     // MARK: - Properties
-    @Environment(\.dismiss) private var dismiss
-    @Binding var isPresented:Bool
+//    @Environment(\.dismiss) private var dismiss
+//    @Binding var isPresented:Bool
     
     // Write to object
-    @State private var feelingSlide:Double = 3.0
+    @State private var feelingSlide:Float = 3.0
     
     // MARK: - Body
     var body: some View {
@@ -51,47 +51,67 @@ struct LogFeelingView: View {
                 .padding()
             
             Spacer()
-            NavigationLink {
-                LogReflectionView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
-                
-                // TO DO:
-                // Pass $feelingSlide to arrayOfReflections.end
-            } label: {
-                Text("Next")
-                    .fontDesign(.rounded)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity)
-            }
-            .padding()
-            .foregroundStyle(Color.buttonText)
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.capsule)
-            .controlSize(.large)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    
-                    Button {
-                        // 3
-                        dismiss()
-                        
-                    } label: {
-                        // 4
-                        
-                        
-                        Image(systemName: "chevron.left")
-                        
-                        
-                        
-                    }.buttonStyle(.bordered)
-                        .foregroundStyle(Color.buttonText)
-                        .fontWeight(.medium)
-                        .fontDesign(.rounded)
-                    
-                        .clipShape(Circle())
+            HStack {
+                Button {
+                    arrayOfReflections[arrayOfReflections.endIndex-1].feelingDouble = feelingSlide
+                } label: {
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.blue)
                 }
+                .padding(.trailing)
+                NavigationLink {
+                    LogReflectionView(/*isPresented: $isPresented*/)/*.navigationBarBackButtonHidden(true)*/
+                    
+                    // TO DO:
+                    // Pass $feelingSlide to arrayOfReflections.end
+                } label: {
+//                    Text("Next")
+//                        .fontDesign(.rounded)
+//                        .font(.title2)
+//                        .fontWeight(.bold)
+//                        .frame(maxWidth: .infinity)
+                    Image(systemName: "arrow.right.circle.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.blue)
+
+                }
+//                .padding()
+//                .foregroundStyle(Color.buttonText)
+//                .buttonStyle(.bordered)
+//                .buttonBorderShape(.capsule)
+//                .controlSize(.large)
             }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    
+//                    Button {
+//                        // 3
+////                        dismiss()
+//                        
+//                    } label: {
+//                        // 4
+//                        
+//                        
+//                        Image(systemName: "chevron.left")
+//                        
+//                        
+//                        
+//                    }.buttonStyle(.bordered)
+//                        .foregroundStyle(Color.buttonText)
+//                        .fontWeight(.medium)
+//                        .fontDesign(.rounded)
+//                    
+//                        .clipShape(Circle())
+//                }
+//            }
             
-        }.background(Color.catchUpYellow.edgesIgnoringSafeArea(.all))
+        }.background(Color(red: 250/255, green: 243/255, blue: 230/255).edgesIgnoringSafeArea(.all))
     }
+}
+
+#Preview {
+    LogFeelingView()
 }

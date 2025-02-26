@@ -14,25 +14,25 @@ import Foundation
     var duration: String
     var catchUpDate: Date // probably a unique datatype
     var activity: String
-    var feelingSlide: Float
+    var feelingDouble: Float
     var journalEntry: String
     
-    init(id: UUID, reflection: String, friendName: String, duration: String, catchUpDate: Date, activity: String, feelingSlide: Float, journalEntry: String) {
+    init(id: UUID, reflection: String, friendName: String, duration: String, catchUpDate: Date, activity: String, feelingDouble: Float, journalEntry: String) {
         self.id = id
         self.reflection = reflection
         self.friendName = friendName
         self.duration = duration
         self.catchUpDate = catchUpDate
         self.activity = activity
-        self.feelingSlide = feelingSlide
+        self.feelingDouble = feelingDouble
         self.journalEntry = journalEntry
     }
 }
 
 var arrayOfReflections: [ReflectionClass] = [
-    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, activity: "chatted", feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, activity: "coffee", feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, activity: "basketball", feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, activity: "chatted", feelingDouble: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, activity: "coffee", feelingDouble: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, activity: "basketball", feelingDouble: 0.0, journalEntry: "Had a great time!"),
 ]
 
 // Later, should look into "data persistence"

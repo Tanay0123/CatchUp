@@ -74,18 +74,18 @@ struct LogContactView2: View {
                 .ignoresSafeArea()
             
             VStack {
-                // Close button
-                HStack {
-                    Button(action: {}) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.gray)
-                    }
-                    .padding()
-                    
-                    Spacer()
-                }
+//                // Close button
+//                HStack {
+//                    Button(action: {}) {
+//                        Image(systemName: "xmark.circle.fill")
+//                            .resizable()
+//                            .frame(width: 30, height: 30)
+//                            .foregroundColor(.gray)
+//                    }
+//                    .padding()
+//                    
+//                    Spacer()
+//                }
                 
                 // Title
                 Text("Who did you see?")

@@ -16,6 +16,12 @@ struct MainView: View {
     // MARK: - Body
     var body: some View {
         VStack {
+            Text("Hello!")
+                .fontDesign(.rounded)
+                .fontWeight(.heavy)
+                .font(.system(size: 32))
+                .foregroundStyle(Color(.orange))
+                .padding()
             Spacer()
             
             Button {

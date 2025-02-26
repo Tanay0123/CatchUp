@@ -2,14 +2,6 @@
 //  ReflectionClass.swift
 //  CatchUp
 //
-//  Created by Oscar Mac on 26/2/2025.
-//
-
-
-//
-//  ReflectionStruct.swift
-//  CatchUp
-//
 //  Created by Tanay Solanki on 25/2/2025.
 //
 

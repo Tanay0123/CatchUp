@@ -15,20 +15,29 @@
 
 import SwiftUI
 
-struct ReflectionTimelineView: View {  
+struct ReflectionTimelineView: View {
     var body: some View {
-        ZStack {
-            VStack {
-                NavigationStack {
-                    List(arrayOfReflections, id: \.id) { reflection in
-                        NavigationLink("\(reflection.friendName) \(reflection.catchUpDate.formatted(date: .numeric, time: .omitted))") {
-                            ReflectionDetailView(reflection: reflection)
-                        }
+        VStack {
+            Text("Reflections!")
+                .fontDesign(.rounded)
+                .fontWeight(.heavy)
+                .font(.system(size: 32))
+                .foregroundStyle(Color(.orange))
+                .padding()
+            NavigationStack {
+                List(arrayOfReflections, id: \.id) { reflection in
+                    NavigationLink("\(reflection.friendName) \(reflection.catchUpDate.formatted(date: .numeric, time: .omitted))") {
+                        ReflectionDetailView(reflection: reflection)
                     }
-                    .navigationTitle("Reflection Timeline")
+                    
                 }
+                .scrollContentBackground(.hidden)
+                .background(Color.catchUpYellow.edgesIgnoringSafeArea(.all))
             }
+            
         }
+        .background(Color(.catchUpYellow))
+        
     }
 }
 

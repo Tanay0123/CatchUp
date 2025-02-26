@@ -28,6 +28,11 @@ struct LogFeelingView: View {
             ("Very Pleasant", "🤩")
         ]
         VStack {
+            Text("How did you feel?")
+                .fontDesign(.rounded)
+                .fontWeight(.heavy)
+                .font(.system(size: 32))
+                .foregroundStyle(Color(.orange))
             // Using the `Int(feelingSlide)` index to access the feelings array
             let feeling = feelings[Int(feelingSlide)]
             
@@ -36,8 +41,8 @@ struct LogFeelingView: View {
                 .font(.system(size: 50))
             
             Slider(value: $feelingSlide, in: 0...6, step: 1)
-        }
-        
+                .padding()
+            
             Spacer()
             NavigationLink {
                 LogReflectionView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
@@ -66,22 +71,20 @@ struct LogFeelingView: View {
                     } label: {
                         // 4
                         
-                            
-                            Image(systemName: "chevron.left")
-                            
-                            
+                        
+                        Image(systemName: "chevron.left")
+                        
+                        
                         
                     }.buttonStyle(.bordered)
                         .foregroundStyle(Color.buttonText)
                         .fontWeight(.medium)
                         .fontDesign(.rounded)
-                        
+                    
                         .clipShape(Circle())
                 }
             }
-        
+            
+        }.background(Color.catchUpYellow.edgesIgnoringSafeArea(.all))
     }
 }
-//#Preview {
-//    LogFeelingView(isPresented: $isPresented)
-//}

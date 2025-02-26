@@ -41,7 +41,7 @@ struct LogActivityView: View {
                     .font(.system(size: 32))
                     .foregroundColor(.orange)
                 
-                Form {
+                Form { //FIXME: make menu colors pale yellow
                     
                     Section {
                         DatePicker("When?", selection: $selectedDate)
@@ -76,6 +76,7 @@ struct LogActivityView: View {
                 .frame(maxWidth: .infinity, maxHeight: 550)
                 .padding()
                 .scrollContentBackground(.hidden)
+                
                 
             }
         }

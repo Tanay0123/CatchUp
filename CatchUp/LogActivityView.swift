@@ -12,6 +12,7 @@ struct LogActivityView: View {
     @State private var selectedDuration: String = ""
     @State private var hangoutDuration = ["Quick", "Medium", "Long"]
     @State private var selectedActivity: String = "Arts and Crafts"
+    @State private var userInput: String = ""
     @State private var activityType = [
         
         "Arts and Crafts",
@@ -54,14 +55,27 @@ struct LogActivityView: View {
                         ForEach(activityType, id: \.self) { choice in
                             Text(choice)
                         }
+                        //                    }
+                        //                    TextField("Add your own activity",text: $userInput)
+                        //                }
+                        //                    Button(action: {
+                        //                    if !self.userInput.isEmpty {
+                        //                            self.activityType.append(self.userInput)
+                        //                            self.userInput = ""
+                        //                        }
+                        //                }) {
+                        //                    Text("Save to activity list")
                     }
                 }
             }
         }
     }
-}
-
+    }
 #Preview {
     LogActivityView()
 }
-
+    //1.make a text field to save user input
+    //2. save the user input into a variable
+    //3. and append it on the array
+    // button to open a text field once clicked. if button is pressed, open text field.
+    

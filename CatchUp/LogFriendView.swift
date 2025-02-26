@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LogContactView: View {
+struct LogFriendView: View {
     // MARK: - Properties
     @Environment(\.dismiss) private var dismiss
     @Binding var isPresented:Bool
@@ -61,5 +61,5 @@ struct LogContactView: View {
 }
 
 //#Preview {
-//    LogContactView(isPresented: $isPresented)
+//    LogFriendView(isPresented: $isPresented)
 //}

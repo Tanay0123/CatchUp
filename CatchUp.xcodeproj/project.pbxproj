@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		5D4A4C192D6BE9B900EBFAC1 /* CatchUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A81D10292D6D7441001F7C48 /* CatchUp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CatchUp.xcodeproj; path = "CatchUp/Preview Content/CatchUp.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -41,6 +42,13 @@
 			isa = PBXGroup;
 			children = (
 				5D4A4C192D6BE9B900EBFAC1 /* CatchUp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A81D102C2D6D7441001F7C48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +105,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5D4A4C1A2D6BE9B900EBFAC1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A81D102C2D6D7441001F7C48 /* Products */;
+					ProjectRef = A81D10292D6D7441001F7C48 /* CatchUp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5D4A4C182D6BE9B900EBFAC1 /* CatchUp */,
@@ -252,7 +266,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CatchUp/Preview Content\"";
-				DEVELOPMENT_TEAM = 2D77J8P5Y4;
+				DEVELOPMENT_TEAM = 2TUK9HH3UJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -265,7 +279,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oscar.CatchUp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noor.CatchUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -281,7 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CatchUp/Preview Content\"";
-				DEVELOPMENT_TEAM = 2D77J8P5Y4;
+				DEVELOPMENT_TEAM = 2TUK9HH3UJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,7 +308,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oscar.CatchUp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noor.CatchUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

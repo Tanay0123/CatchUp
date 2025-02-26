@@ -12,7 +12,7 @@ struct LogContactView_: View {
     @State private var searchText: String = ""
     //  @State private var contacts: [String] = ["Olivia", "Ethan", "Noah", "Ava"]
     
-    //  "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott"
+    //  "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott" Joe John Bart
     
     @State private var selectedContacts: Set<String> = []
     @State private var selectOlivia: Bool = false
@@ -22,6 +22,13 @@ struct LogContactView_: View {
     @State private var selectSophia: Bool = false
     @State private var selectLiam: Bool = false
     @State private var selectHenry: Bool = false
+    @State private var selectJoe: Bool = false
+    @State private var selectJohn: Bool = false
+    @State private var selectBart: Bool = false
+    
+   /* @State private var selectedFriends: [String] = []
+
+    let friends = ["Olivia", "Ethan", "Noah", "Ava", "Sophia", "Liam", "Isabella", "Benjamin", "Emma", "Daniel", "Chloe", "Henry", "Charlotte", "Jack", "Amelia", "William", "Zoe", "Joe", "John", "Bart"] */
     
     
     
@@ -72,12 +79,12 @@ struct LogContactView_: View {
                         )
                     
                     // Add (+) Button
-                    Button(action: {}) {
+                 /*   Button(action: {}) {
                         Image(systemName: "plus.circle.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(.blue)
-                    }
+                    } */
                 }
                 .padding(.horizontal, 40)
                 
@@ -93,13 +100,16 @@ struct LogContactView_: View {
                             Form {
                                     
                                 Section(header: Text("Your Top CatchUp")) {
-                                    Toggle("Olivia", isOn: $selectOlivia)
+                                 Toggle("Olivia", isOn: $selectOlivia)
                                     Toggle("Ethan", isOn: $selectEthan)
                                     Toggle("Noah", isOn: $selectNoah)
                                     Toggle("Ava", isOn: $selectAva)
                                     Toggle("Sophia", isOn: $selectSophia)
-                                    Toggle("Liam", isOn: $selectLiam)
+                                    Toggle("John", isOn: $selectJohn)
                                     Toggle("Henry", isOn: $selectHenry)
+                                    Toggle("Joe", isOn: $selectJoe)
+                                    Toggle("Liam", isOn: $selectLiam)
+                                    Toggle("Bart", isOn: $selectBart)
                                     
                                     
                                 }
@@ -137,4 +147,4 @@ struct LogContactView_: View {
 #Preview {
     LogContactView_()
 }
-
+// if one of these people are marked as "true", their name needs to be passed to the string arrayOfReflections.end.friendName

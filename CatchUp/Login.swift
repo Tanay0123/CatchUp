@@ -20,23 +20,25 @@ struct Login: View {
                 VStack{
                     Image("CatchUp-02")
                         .resizable()
-                        .frame(width: 200, height: 200)
-                        .padding(.vertical, 10)
+                        .frame(width: 300, height: 300)
+                        .padding(.vertical, 15)
                     Text("CatchUp")
                         .font(.largeTitle)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.blue)
+                        .fontWeight(.light)
+                        .foregroundStyle(.orange)
                     HStack {
                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.white)
-                            .frame(width: 400, height: 100)
+                        RoundedRectangle(cornerRadius: 40)
+                            .fill(.orange)
+                            .opacity(10/100)
+                            .frame(width: 380, height: 100)
                             .overlay(
                                 HStack {
                                     Text("Reflect on your relationships and emotions over time.")
                                         .font(.title3)
-                                        .fontWeight(.bold)
-                                        .foregroundStyle(.gray)
+                                        .fontWeight(.regular)
+                                        .foregroundStyle(.black)
+                                        .opacity(0.5)
                                         .padding(.leading)
                                     Spacer()
                                 }
@@ -45,19 +47,16 @@ struct Login: View {
                         
                     }
                     .padding(.horizontal, 40)
-                    
-                    
-                    
-                    
-                    .padding(.horizontal, 40)
                     .padding(.vertical, 30)
                     NavigationLink {
                         LogContactView_()
                     } label: {
                         Text("START!")
                     }
-                    .buttonStyle(.bordered)
+                    .buttonStyle(.borderedProminent)
                     .font(.title2)
+                    .fontWeight(.bold)
+                    
                 }
                 }
             }

@@ -102,7 +102,7 @@ struct LogReflectionView: View {
                     Spacer()
                     
                     NavigationLink {
-                        Text("This is camera page")
+                        Recording()
                     } label: {
                         Image(systemName: "camera")
                     }

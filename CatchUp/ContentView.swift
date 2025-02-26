@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var reflection: ReflectionStruct
+    var reflection: ReflectionClass
     var body: some View {
         VStack {
             Text("Friend name: \(reflection.friendName)")

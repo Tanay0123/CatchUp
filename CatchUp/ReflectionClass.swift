@@ -7,7 +7,7 @@
 
 import Foundation
 
-@Observable class ReflectionStruct: Observable {
+@Observable class ReflectionClass: Observable {
     var id: UUID /*= UUID()*/
     var reflection: String
     var friendName: String
@@ -29,10 +29,10 @@ import Foundation
     }
 }
 
-var arrayOfReflections: [ReflectionStruct] = [
-    ReflectionStruct(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionStruct(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionStruct(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+var arrayOfReflections: [ReflectionClass] = [
+    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
 ]
 
 

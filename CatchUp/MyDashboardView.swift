@@ -12,7 +12,7 @@ struct MyDashboardView: View {
     var body: some View {
         NavigationStack {
             Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                arrayOfReflections.append(ReflectionStruct(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: -1.0, journalEntry: "[BLANK]"))
+                arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: -1.0, journalEntry: "[BLANK]"))
                 
 //                print("Count: \(arrayOfReflections.count)") // Testing purposes
             }

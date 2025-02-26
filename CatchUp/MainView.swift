@@ -34,21 +34,6 @@ struct MainView: View {
             .buttonBorderShape(.capsule)
             .controlSize(.large)
             
-            //        Button {
-            //            ReflectionTimelineView()
-            //        } label: {
-            //            Text("Add")
-            //                .fontDesign(.rounded)
-            //                .font(.title2)
-            //                .fontWeight(.bold)
-            //                .frame(maxWidth: .infinity)
-            //        }
-            //        .padding()
-            //        .buttonStyle(.bordered)
-            //        .foregroundStyle(Color(.buttonText))
-            //        .buttonBorderShape(.capsule)
-            //        .controlSize(.large)
-            
             .sheet(isPresented: $isPresented){
                 LogFriendView(isPresented: $isPresented)
                 // Corner radius
@@ -60,6 +45,6 @@ struct MainView: View {
     }
 }
          
-//#Preview {
-//    MainView()
-//}
+#Preview {
+    MainView()
+}

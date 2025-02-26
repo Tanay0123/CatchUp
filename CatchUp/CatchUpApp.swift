@@ -11,7 +11,21 @@ import SwiftUI
 struct CatchUpApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            TabView {
+                Tab {
+                    MainView()
+                } label: {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+                Tab {
+                    ReflectionTimelineView()
+                } label: {
+                    Image(systemName: "archivebox")
+                    Text("Reflections")
+                }
+            }
+            
         }
     }
 }

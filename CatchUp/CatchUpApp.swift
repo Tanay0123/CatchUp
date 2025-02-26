@@ -25,6 +25,7 @@ struct CatchUpApp: App {
                     Text("Reflections")
                 }
             }
+            .accentColor(Color.orange)
             
         }
     }

@@ -35,8 +35,9 @@ struct MainView: View {
                     .frame(maxWidth: .infinity)
             }
             .padding()
-            .buttonStyle(.bordered)
-            .foregroundStyle(Color(.buttonText))
+            .foregroundStyle(Color.white)
+            .buttonStyle(.borderedProminent)
+            .tint(Color(.orange))
             .buttonBorderShape(.capsule)
             .controlSize(.large)
             

@@ -90,8 +90,9 @@ struct LogActivityView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .padding()
-                .foregroundStyle(Color.buttonText)
-                .buttonStyle(.bordered)
+                .foregroundStyle(Color.white)
+                .buttonStyle(.borderedProminent)
+                .tint(Color(.orange))
                 .buttonBorderShape(.capsule)
                 .controlSize(.large)
                 .toolbar {

@@ -73,10 +73,11 @@ struct LogActivityView: View {
                         }
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: 550)
+                .frame(maxWidth: 350, maxHeight: 500)
                 .padding()
                 .scrollContentBackground(.hidden)
                 .background(Color(red: 230/255, green: 245/255, blue: 255/255))
+                .cornerRadius(50)
             }
         }
         

@@ -12,12 +12,38 @@ struct LogFeelingView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var isPresented:Bool
     
+    // Write to object
+    @State private var feelingSlide:Double = 3.0
+    
     // MARK: - Body
     var body: some View {
+        // Data structure for emotions and their corresponding text and emoji
+        let feelings = [
+            ("Very Unpleasant", "🤢"),
+            ("Unpleasant", "😒"),
+            ("Slightly Unpleasant", "😕"),
+            ("Neutral", "😶"),
+            ("Slightly Pleasant", "😌"),
+            ("Pleasant", "😄"),
+            ("Very Pleasant", "🤩")
+        ]
+        VStack {
+            // Using the `Int(feelingSlide)` index to access the feelings array
+            let feeling = feelings[Int(feelingSlide)]
+            
+            Text(feeling.0)
+            Text(feeling.1)
+                .font(.system(size: 50))
+            
+            Slider(value: $feelingSlide, in: 0...6, step: 1)
+        }
         
             Spacer()
             NavigationLink {
                 LogReflectionView(isPresented: $isPresented).navigationBarBackButtonHidden(true)
+                
+                // TO DO:
+                // Pass $feelingSlide to arrayOfReflections.end
             } label: {
                 Text("Next")
                     .fontDesign(.rounded)

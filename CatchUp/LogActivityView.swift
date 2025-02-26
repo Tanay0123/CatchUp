@@ -76,7 +76,7 @@ struct LogActivityView: View {
                 .frame(maxWidth: .infinity, maxHeight: 550)
                 .padding()
                 .scrollContentBackground(.hidden)
-                .background(Color.red.opacity(0.1))
+                .background(Color(red: 230/255, green: 245/255, blue: 255/255))
             }
         }
         

@@ -76,17 +76,16 @@ struct LogActivityView: View {
                 .frame(maxWidth: .infinity, maxHeight: 550)
                 .padding()
                 .scrollContentBackground(.hidden)
-                
-                
+                .background(Color.red.opacity(0.1))
             }
         }
-       
+        
         //1.make a text field to save user input
         //2. save the user input into a variable
         //3. and append it on the array
         // button to open a text field once clicked. if button is pressed, open text field.
-        }
-       
+    }
+    
 }
 #Preview {
     LogActivityView()

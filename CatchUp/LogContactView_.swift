@@ -122,7 +122,7 @@ struct LogContactView_: View {
                     //}
                // }
                 .frame(maxWidth: .infinity, maxHeight: 400) // Set fixed height for scrollable box
-                //.background(Color(red: 230/255, green: 245/255, blue: 255/255))
+                .background(Color(red: 230/255, green: 245/255, blue: 255/255))
                 .scrollContentBackground(.hidden)
                 .cornerRadius(20)
                 .padding(.horizontal)

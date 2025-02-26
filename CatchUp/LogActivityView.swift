@@ -32,50 +32,60 @@ struct LogActivityView: View {
     ]
     
     var body: some View {
-        VStack {
-            Text("What did you do?")
-                .fontWeight(.heavy)
-                .font(.system(size: 32))
-            
-            Form {
+        ZStack { //Background color
+            Color(red: 250/255, green: 243/255, blue: 230/255)
+                .ignoresSafeArea()
+            VStack {
+                Text("What did you do?")
+                    .fontWeight(.heavy)
+                    .font(.system(size: 32))
+                    .foregroundColor(.orange)
                 
-                Section {
-                    DatePicker("When?", selection: $selectedDate)
-                }
-                Section (header: Text("How long for?")) {
-                    Picker("Duration", selection: $selectedDuration) {
-                        ForEach(hangoutDuration, id: \.self) {choice in
-                            Text(choice)
+                Form {
+                    
+                    Section {
+                        DatePicker("When?", selection: $selectedDate)
+                    }
+                    Section (header: Text("How long for?")) {
+                        Picker("Duration", selection: $selectedDuration) {
+                            ForEach(hangoutDuration, id: \.self) {choice in
+                                Text(choice)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .frame(height: 130)
+                    }
+                    Section (header: Text("What did you get up to?")) {
+                        Picker("Activity Type", selection: $selectedActivity) {
+                            ForEach(activityType, id: \.self) { choice in
+                                Text(choice)
+                            }
+                            //                    }
+                            //                                            TextField("Add your own activity",text: $userInput)
+                            //                                        }
+                            //                                            Button(action: {
+                            //                                            if !self.userInput.isEmpty {
+                            //                                                    self.activityType.append(self.userInput)
+                            //                                                    self.userInput = ""
+                            //                                                }
+                            //                                        }) {
+                            //                                            Text("Save to activity list")
                         }
                     }
-                    .pickerStyle(.wheel)
-                    .frame(height: 130)
                 }
-                Section (header: Text("What did you get up to?")) {
-                    Picker("Activity Type", selection: $selectedActivity) {
-                        ForEach(activityType, id: \.self) { choice in
-                            Text(choice)
-                        }
-//                    }
-//                                            TextField("Add your own activity",text: $userInput)
-//                                        }
-//                                            Button(action: {
-//                                            if !self.userInput.isEmpty {
-//                                                    self.activityType.append(self.userInput)
-//                                                    self.userInput = ""
-//                                                }
-//                                        }) {
-//                                            Text("Save to activity list")
-                    }
-                }
+                .frame(maxWidth: .infinity, maxHeight: 550)
+                .padding()
+                
             }
         }
-    }
+       
+        //1.make a text field to save user input
+        //2. save the user input into a variable
+        //3. and append it on the array
+        // button to open a text field once clicked. if button is pressed, open text field.
+        }
+       
+}
 #Preview {
     LogActivityView()
 }
-    //1.make a text field to save user input
-    //2. save the user input into a variable
-    //3. and append it on the array
-    // button to open a text field once clicked. if button is pressed, open text field.
-    

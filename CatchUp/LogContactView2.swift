@@ -140,16 +140,22 @@ struct LogContactView2: View {
                 Spacer()
                 
                 // Right Arrow Button
-                Button {
-                    print(getSelectedFriends().joined(separator: ", "))
+                HStack {
+                    Button {
+                        print(getSelectedFriends().joined(separator: ", "))
+                        
+                    } label: {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.bottom)
                     
-                } label: {
-                    Image(systemName: "arrow.right.circle.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.blue)
+//                    NavigationLink {
+//                        
+//                    }
                 }
-                .padding(.bottom)
             }
         }
     }

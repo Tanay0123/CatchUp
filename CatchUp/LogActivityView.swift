@@ -75,6 +75,7 @@ struct LogActivityView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 550)
                 .padding()
+                .scrollContentBackground(.hidden)
                 
             }
         }

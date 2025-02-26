@@ -15,17 +15,17 @@ struct LogActivityView: View {
     @State private var userInput: String = ""
     @State private var activityType = [
         
-        "Arts and Crafts",
-        "Cultural and Educational Events",
-        "Dining Experiences",
-        "Fitness and Wellness",
-        "Music and Dance",
-        "Outdoor Activities",
-        "Social Gatherings",
-        "Sports and Games",
-        "Technology and Gaming",
-        "Travel and Adventure",
-        "Volunteering and Charity Work",
+        "Arts and Crafts 🎨",
+        "Cultural and Educational Events 🎭",
+        "Dining Experiences 🍽️",
+        "Fitness and Wellness 🧘 ",
+        "Music and Dance 🎵",
+        "Outdoor Activities 🌲",
+        "Social Gatherings 🎉",
+        "Sports and Games 🏀" ,
+        "Technology and Gaming 🎮",
+        "Travel and Adventure ✈️",
+        "Volunteering and Charity Work 🎗️",
         "Other",
         //FIXME: ADD YOUR OWN ACTIVITY: button to save user input into state variable array
         
@@ -55,7 +55,7 @@ struct LogActivityView: View {
                         .pickerStyle(.wheel)
                         .frame(height: 130)
                     }
-                    Section (header: Text("What did you get up to?")) {
+                    Section (header: Text("What did you get up to?")) { //FIXME: make this optional, can leave this blank
                         Picker("Activity Type", selection: $selectedActivity) {
                             ForEach(activityType, id: \.self) { choice in
                                 Text(choice)

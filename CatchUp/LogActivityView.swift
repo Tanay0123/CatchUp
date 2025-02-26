@@ -50,58 +50,37 @@ struct LogActivityView: View {
                 
                 Form { //FIXME: make menu colors pale yellow
                     
-                    VStack {
-                        Section {
-                            DatePicker("When?", selection: $selectedDate)
+                    Section (header: Text("1 - When?")){
+                        DatePicker("Select:", selection: $selectedDate)
+                    }
+                    Section (header: Text("2 - How long for?")) {
+                        Picker("Duration", selection: $selectedDuration) {
+                            ForEach(hangoutDuration, id: \.self) {choice in
+                                Text(choice)
+                            }
                         }
-                        Button {
-                            arrayOfReflections[arrayOfReflections.endIndex-1].catchUpDate = selectedDate
-                        } label: {
-                            Text("Confirm")
+                        .pickerStyle(.wheel)
+                        .frame(height: 130)
+                    }
+                    Section (header: Text("3 - What did you get up to?")) { //FIXME: make this optional, can leave this blank
+                        Picker("Activity Type", selection: $selectedActivity) {
+                            ForEach(activityType, id: \.self) { choice in
+                                Text(choice)
+                            }
+                            //                    }
+                            //                                            TextField("Add your own activity",text: $userInput)
+                            //                                        }
+                            //                                            Button(action: {
+                            //                                            if !self.userInput.isEmpty {
+                            //                                                    self.activityType.append(self.userInput)
+                            //                                                    self.userInput = ""
+                            //                                                }
+                            //                                        }) {
+                            //                                            Text("Save to activity list")
                         }
                     }
                     
-                    VStack {
-                        Section (header: Text("How long for?")) {
-                            Picker("Duration", selection: $selectedDuration) {
-                                ForEach(hangoutDuration, id: \.self) {choice in
-                                    Text(choice)
-                                }
-                            }
-                            .pickerStyle(.wheel)
-                            .frame(height: 130)
-                        }
-                        Button {
-                            arrayOfReflections[arrayOfReflections.endIndex-1].duration = selectedDuration
-                        } label: {
-                            Text("Confirm")
-                        }
-                    }
-                    
-                    VStack {
-                        Section (header: Text("What did you get up to?")) { //FIXME: make this optional, can leave this blank
-                            Picker("Activity Type", selection: $selectedActivity) {
-                                ForEach(activityType, id: \.self) { choice in
-                                    Text(choice)
-                                }
-                                //                    }
-                                //                                            TextField("Add your own activity",text: $userInput)
-                                //                                        }
-                                //                                            Button(action: {
-                                //                                            if !self.userInput.isEmpty {
-                                //                                                    self.activityType.append(self.userInput)
-                                //                                                    self.userInput = ""
-                                //                                                }
-                                //                                        }) {
-                                //                                            Text("Save to activity list")
-                            }
-                        }
-                        Button {
-//                            arrayOfReflections[arrayOfReflections.endIndex-1].activity=selectedActivity
-                        } label: {
-                            Text("Confirm")
-                        }
-                    }
+                    Section (header: Text("Confirm Fields")) {}
                 }
                 .frame(maxWidth: 350, maxHeight: 500)
                 .padding()
@@ -109,14 +88,42 @@ struct LogActivityView: View {
                 .background(Color(red: 230/255, green: 245/255, blue: 255/255))
                 .cornerRadius(50)
             }
-            Button {
+            HStack {
+                Button {
+//                    print("\(selectedDate)")
+                    arrayOfReflections[arrayOfReflections.endIndex-1].catchUpDate = selectedDate
+                } label: {
+                    Image(systemName: "1.circle.fill")
+                }
+                Button {
+//                    print("\(selectedDuration)")
+                    arrayOfReflections[arrayOfReflections.endIndex-1].duration = selectedDuration
+                } label: {
+                    Image(systemName: "2.circle.fill")
+                }
+                Button {
+//                    print("\(selectedActivity)")
+                    arrayOfReflections[arrayOfReflections.endIndex-1].activity = selectedActivity
+                } label: {
+                    Image(systemName: "3.circle.fill")
+                }
+            }
+            .padding(.top, 500)
+            HStack {
+                NavigationLink {
+                    LogContactView2()
+                } label: {
+                    Image(systemName: "arrow.left.circle.fill")
+                }
                 
-            } label: {
-                Image(systemName: "arrow.right.circle.fill")
+                NavigationLink {
+                    ReflectionTimelineView()
+                } label: {
+                    Image(systemName: "arrow.right.circle.fill")
+                }
             }
             .padding(.top, 700)
         }
-        
         
         //1.make a text field to save user input
         //2. save the user input into a variable

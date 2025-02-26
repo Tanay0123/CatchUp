@@ -12,7 +12,7 @@ struct MyDashboardView: View {
     var body: some View {
         NavigationStack {
             Button("Add reflection") {
-                arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, activity: "[BLANK]", feelingSlide: -1.0, journalEntry: "[BLANK]"))
+                arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, activity: "[BLANK]", feelingSlide: -1.0, journalEntry: "[BLANK]"))
             }
             .buttonStyle(.bordered)
             

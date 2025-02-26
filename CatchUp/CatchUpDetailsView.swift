@@ -14,7 +14,8 @@ struct ContentView: View {
             Text("Friend name: \(reflection.friendName)")
             Text("Catch up duration: \(reflection.duration)")
             Text("Catch up date: \(reflection.catchUpDate.formatted(date: .numeric, time: .omitted)),")
-            Text("Catch up time: \(reflection.catchUpTime.formatted(date: .omitted, time: .standard))")
+            Text("Catch up time: \(reflection.catchUpDate.formatted(date: .omitted, time: .standard))")
+            Text("Catch up activity: \(reflection.activity)")
 //            Text("Emotion score: \(reflection.feelingSlide)") // translate into a colour, or an emoji
             Text("My entry: \(reflection.journalEntry)")
         }

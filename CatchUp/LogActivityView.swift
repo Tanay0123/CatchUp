@@ -40,7 +40,8 @@ struct LogActivityView: View {
             Form {
                 
                 Section {
-                    DatePicker("When?", selection: $selectedDate)                 }
+                    DatePicker("When?", selection: $selectedDate)
+                }
                 Section (header: Text("How long for?")) {
                     Picker("Duration", selection: $selectedDuration) {
                         ForEach(hangoutDuration, id: \.self) {choice in
@@ -48,28 +49,27 @@ struct LogActivityView: View {
                         }
                     }
                     .pickerStyle(.wheel)
-                    .frame(height: 150)
+                    .frame(height: 130)
                 }
                 Section (header: Text("What did you get up to?")) {
                     Picker("Activity Type", selection: $selectedActivity) {
                         ForEach(activityType, id: \.self) { choice in
                             Text(choice)
                         }
-                        //                    }
-                        //                    TextField("Add your own activity",text: $userInput)
-                        //                }
-                        //                    Button(action: {
-                        //                    if !self.userInput.isEmpty {
-                        //                            self.activityType.append(self.userInput)
-                        //                            self.userInput = ""
-                        //                        }
-                        //                }) {
-                        //                    Text("Save to activity list")
+//                    }
+//                                            TextField("Add your own activity",text: $userInput)
+//                                        }
+//                                            Button(action: {
+//                                            if !self.userInput.isEmpty {
+//                                                    self.activityType.append(self.userInput)
+//                                                    self.userInput = ""
+//                                                }
+//                                        }) {
+//                                            Text("Save to activity list")
                     }
                 }
             }
         }
-    }
     }
 #Preview {
     LogActivityView()

@@ -118,6 +118,7 @@ struct LogActivityView: View {
                 
                 NavigationLink {
                     ReflectionTimelineView()
+                    //really should be logfeelings, but don't know what parametres need to be passed
                 } label: {
                     Image(systemName: "arrow.right.circle.fill")
                 }

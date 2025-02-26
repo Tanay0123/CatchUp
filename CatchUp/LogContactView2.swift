@@ -18,11 +18,7 @@ import SwiftUI
 
 struct LogContactView2: View {
     @State private var searchText: String = ""
-    //  @State private var contacts: [String] = ["Olivia", "Ethan", "Noah", "Ava"]
     
-    //  "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott" Joe John Bart
-    
-    @State private var selectedContacts: Set<String> = []
     @State private var selectOlivia: Bool = false
     @State private var selectEthan: Bool = false
     @State private var selectNoah: Bool = false
@@ -34,13 +30,14 @@ struct LogContactView2: View {
     @State private var selectJohn: Bool = false
     @State private var selectBart: Bool = false
     
-   /* @State private var selectedFriends: [String] = []
-
-    let friends = ["Olivia", "Ethan", "Noah", "Ava", "Sophia", "Liam", "Isabella", "Benjamin", "Emma", "Daniel", "Chloe", "Henry", "Charlotte", "Jack", "Amelia", "William", "Zoe", "Joe", "John", "Bart"] */
+    @State private var selectedNames: String = ""
     
-    
-    
-    
+    func getSelectedNames() {
+        if selectOlivia == true {
+            selectedNames = selectedNames + "Olivia"
+        }
+        
+    }
     
     var body: some View {
         ZStack {
@@ -85,52 +82,28 @@ struct LogContactView2: View {
                             }
                                 .padding(.horizontal)
                         )
-                    
-                    // Add (+) Button
-                 /*   Button(action: {}) {
-                        Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.blue)
-                    } */
                 }
                 .padding(.horizontal, 40)
                 
-               // ScrollView {
-                    //VStack {
+                Form {
+                    
+                    Section(header: Text("Your Top CatchUp")) {
+                        Toggle("Olivia", isOn: $selectOlivia)
+                        Toggle("Ethan", isOn: $selectEthan)
+                        Toggle("Noah", isOn: $selectNoah)
+                        Toggle("Ava", isOn: $selectAva)
+                        Toggle("Sophia", isOn: $selectSophia)
+                        Toggle("John", isOn: $selectJohn)
+                        Toggle("Henry", isOn: $selectHenry)
+                        Toggle("Joe", isOn: $selectJoe)
+                        Toggle("Liam", isOn: $selectLiam)
+                        Toggle("Bart", isOn: $selectBart)
                         
-                      // HStack {
-                            //Image(systemName: "person.circle.fill")
-                              //  .resizable()
-                                //.frame(width: 40, height: 40)
-                               // .foregroundColor(.blue)
-                            
-                            Form {
-                                    
-                                Section(header: Text("Your Top CatchUp")) {
-                                 Toggle("Olivia", isOn: $selectOlivia)
-                                    Toggle("Ethan", isOn: $selectEthan)
-                                    Toggle("Noah", isOn: $selectNoah)
-                                    Toggle("Ava", isOn: $selectAva)
-                                    Toggle("Sophia", isOn: $selectSophia)
-                                    Toggle("John", isOn: $selectJohn)
-                                    Toggle("Henry", isOn: $selectHenry)
-                                    Toggle("Joe", isOn: $selectJoe)
-                                    Toggle("Liam", isOn: $selectLiam)
-                                    Toggle("Bart", isOn: $selectBart)
-                                    
-                                    
-                                }
-                                .toggleStyle(.button)
-                                
-                               // .padding(.horizontal)
-                            }
-                            //.padding(.bottom)
-                       // }
-                    //}
-               // }
-                .frame(maxWidth: .infinity, maxHeight: 400) // Set fixed height for scrollable box
-                //.background(Color(red: 230/255, green: 245/255, blue: 255/255))
+                        
+                    }
+                    .toggleStyle(.button)
+                }
+                .frame(maxWidth: .infinity, maxHeight: 400)
                 .scrollContentBackground(.hidden)
                 .cornerRadius(20)
                 .padding(.horizontal)
@@ -138,11 +111,8 @@ struct LogContactView2: View {
                 
                 Spacer()
                 
-                
-                
-                
                 // Right Arrow Button
-                Button(action: {}) {
+                Button(action: {print("\(selectedNames)")}) {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
                         .frame(width: 50, height: 50)
@@ -153,7 +123,7 @@ struct LogContactView2: View {
         }
     }
 }
+
 #Preview {
     LogContactView2()
 }
-// if one of these people are marked as "true", their name needs to be passed to the string arrayOfReflections.end.friendName

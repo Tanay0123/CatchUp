@@ -30,13 +30,41 @@ struct LogContactView2: View {
     @State private var selectJohn: Bool = false
     @State private var selectBart: Bool = false
     
-    @State private var selectedNames: String = ""
+    @State private var selectedNames: [String] = []
     
-    func getSelectedNames() {
-        if selectOlivia == true {
-            selectedNames = selectedNames + "Olivia"
+    func getSelectedFriends() -> [String] {
+        var selected: [String] = []
+        if selectOlivia {
+            selected.append("Olivia")
         }
-        
+        if selectEthan {
+            selected.append("Ethan")
+        }
+        if selectNoah {
+            selected.append("Noah")
+        }
+        if selectAva {
+            selected.append("Ava")
+        }
+        if selectSophia {
+            selected.append("Sophia")
+        }
+        if selectLiam {
+            selected.append("Liam")
+        }
+        if selectHenry {
+            selected.append("Henry")
+        }
+        if selectJoe {
+            selected.append("Joe")
+        }
+        if selectJohn {
+            selected.append("John")
+        }
+        if selectBart {
+            selected.append("Bart")
+        }
+        return selected
     }
     
     var body: some View {
@@ -112,7 +140,10 @@ struct LogContactView2: View {
                 Spacer()
                 
                 // Right Arrow Button
-                Button(action: {print("\(selectedNames)")}) {
+                Button {
+                    print(getSelectedFriends().joined(separator: ", "))
+                    
+                } label: {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
                         .frame(width: 50, height: 50)

@@ -10,11 +10,21 @@ import SwiftUI
 
 struct LogContactView_: View {
     @State private var searchText: String = ""
-    @State private var contacts: [String] = ["Olivia Lee", "Ethan Park", "Mia Chen", "Noah Johnson", "Ava Kim", "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott"]
+    //  @State private var contacts: [String] = ["Olivia", "Ethan", "Noah", "Ava"]
+    
+    //  "Lucas Wong", "Sophia Patel", "Liam Nguyen", "Isabella Garcia", "Benjamin Smith", "Emma Brown", "Daniel Wilson", "Chloe Martinez", "Henry Taylor", "Charlotte Evans", "Jack Robinson", "Amelia White", "William Harris", "Zoe Scott"
     
     @State private var selectedContacts: Set<String> = []
-    @State private var isChecked = false
-
+    @State private var selectOlivia: Bool = false
+    @State private var selectEthan: Bool = false
+    @State private var selectNoah: Bool = false
+    @State private var selectAva: Bool = false
+    @State private var selectSophia: Bool = false
+    @State private var selectLiam: Bool = false
+    @State private var selectHenry: Bool = false
+    
+    
+    
     
     
     var body: some View {
@@ -71,38 +81,44 @@ struct LogContactView_: View {
                 }
                 .padding(.horizontal, 40)
                 
-                ScrollView {
-        
-                    // Contact List
-                    ForEach(contacts, id: \.self) { contact in
-                        HStack {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.blue)
-                            Text(contact)
-                                .font(.body)
-                            Spacer()
-                           // Image(systemName: "squareshape")
-                            //    .foregroundColor(.gray)
-                              //  .padding(.trailing)
-                      Toggle("", isOn: $isChecked)
-                                .padding()
-                        }
-                        .toggleStyle(.switch)
-//                        .toggleStyle(.CheckboxToggleStyle)
+               // ScrollView {
+                    //VStack {
                         
-                        .padding(.horizontal)
-                    }
-                    .padding(.bottom)
-                }
-                .frame(maxWidth: .infinity, maxHeight: 500) // Set fixed height for scrollable box
+                      // HStack {
+                            //Image(systemName: "person.circle.fill")
+                              //  .resizable()
+                                //.frame(width: 40, height: 40)
+                               // .foregroundColor(.blue)
+                            
+                            Form {
+                                    
+                                Section(header: Text("Your Top CatchUp")) {
+                                    Toggle("Olivia", isOn: $selectOlivia)
+                                    Toggle("Ethan", isOn: $selectEthan)
+                                    Toggle("Noah", isOn: $selectNoah)
+                                    Toggle("Ava", isOn: $selectAva)
+                                    Toggle("Sophia", isOn: $selectSophia)
+                                    Toggle("Liam", isOn: $selectLiam)
+                                    Toggle("Henry", isOn: $selectHenry)
+                                    
+                                    
+                                }
+                                .toggleStyle(.button)
+                                
+                               // .padding(.horizontal)
+                            }
+                            //.padding(.bottom)
+                       // }
+                    //}
+               // }
+                .frame(maxWidth: .infinity, maxHeight: 400) // Set fixed height for scrollable box
                 .background(Color(red: 230/255, green: 245/255, blue: 255/255))
                 .cornerRadius(20)
                 .padding(.horizontal)
                 .padding()
                 
                 Spacer()
+                
                 
                 
                 

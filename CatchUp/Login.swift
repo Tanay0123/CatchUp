@@ -20,17 +20,17 @@ struct Login: View {
                 VStack{
                     Image("CatchUp-02")
                         .resizable()
-                        .frame(width: 300, height: 300)
-                        .padding(.vertical, 30)
+                        .frame(width: 200, height: 200)
+                        .padding(.vertical, 10)
                     Text("CatchUp")
                         .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
                         .foregroundStyle(.blue)
                     HStack {
                        
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white)
-                            .frame(width: 400, height: 150)
+                            .fill(.white)
+                            .frame(width: 400, height: 100)
                             .overlay(
                                 HStack {
                                     Text("Reflect on your relationships and emotions over time.")

@@ -26,7 +26,7 @@ struct MainView: View {
             
             Button {
                 isPresented.toggle()
-                arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: -1.0, journalEntry: "[BLANK]"))
+//                arrayOfReflections.append(ReflectionClass(id: UUID(), reflection: "[BLANK]", friendName: "[BLANK]", duration: "[BLANK]", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: -1.0, journalEntry: "[BLANK]"))
             } label: {
                 Text("Add")
                     .fontDesign(.rounded)

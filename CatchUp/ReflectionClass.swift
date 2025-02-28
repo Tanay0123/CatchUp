@@ -30,7 +30,8 @@ import Foundation
 }
 
 var arrayOfReflections: [ReflectionClass] = [
-    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "Joe", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "John", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
-    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    
+    ReflectionClass(id: UUID(), reflection: "Reflection 1", friendName: "John", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 2", friendName: "Bart", duration: "short", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 0.0, journalEntry: "Had a great time!"),
+    ReflectionClass(id: UUID(), reflection: "Reflection 3", friendName: "Linda, Tanay, Oscar, and Noor", duration: "Long", catchUpDate: Date.now, catchUpTime: Date.now, feelingSlide: 5.0, journalEntry: "Have just graduated Apple Foundation Program at RMIT and have had a great time working in a team and learned plenty of valuable skills including prototyping, and coding in XCode!"),
 ]

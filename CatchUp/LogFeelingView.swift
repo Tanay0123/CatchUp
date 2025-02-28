@@ -1,10 +1,3 @@
-//
-//  LogFeelingView.swift
-//  CatchUp
-//
-//  Created by Oscar Mac on 24/2/2025.
-//
-
 import SwiftUI
 
 struct LogFeelingView: View {
@@ -14,6 +7,7 @@ struct LogFeelingView: View {
     
     // Write to object
     @State private var feelingSlide: Double = 3.0
+    @State private var animatedFeelingIndex: Double = 3.0
     
     // MARK: - Body
     var body: some View {
@@ -37,20 +31,24 @@ struct LogFeelingView: View {
             // Using the `Int(feelingSlide)` index to access the feelings array
             let feeling = feelings[Int(feelingSlide)]
             
-            
             Text(feeling.1)
                 .font(.system(size: 100))
                 .fontDesign(.rounded)
                 .fontWeight(.heavy)
             
-            FeelingSlider(feelingSlide: $feelingSlide)
-                .padding()
-            Text(feeling.0)
-                .font(.system(size: 32))
+            FeelingSlider(feelingSlide: $feelingSlide, onSlideChanged: { newSlide in
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    animatedFeelingIndex = newSlide
+                }
+            })
+            .padding()
+            
+            Text(feelings[Int(animatedFeelingIndex)].0)
+                .font(.system(size: 19))
+                .contentTransition(.numericText())
                 .fontDesign(.rounded)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color(red: 1.0, green: 0.7, blue: 0.2))
-               
             
             Spacer()
             NavigationLink {
@@ -94,6 +92,7 @@ struct LogFeelingView: View {
 
 struct FeelingSlider: View {
     @Binding var feelingSlide: Double
+    var onSlideChanged: (Double) -> Void // Add closure
     let feelings = [
         ("Very Unpleasant", "🤢"),
         ("Unpleasant", "😒"),
@@ -132,7 +131,6 @@ struct FeelingSlider: View {
                 // Notches (excluding ends)
                 ForEach(1..<feelings.count - 1, id: \.self) { index in
                     let xPosition = CGFloat(index) / CGFloat(feelings.count - 1) * geometry.size.width
-//                    Rectangle()
                     Circle()
                         .frame(width: 4, height: sliderHeight * 0.7)
                         .foregroundColor(.white)
@@ -147,7 +145,7 @@ struct FeelingSlider: View {
                         Circle()
                             .strokeBorder(Color.white, lineWidth: 6)
                     )
-                    .frame(width: sliderHeight * 10.5, height: sliderHeight * 1.5)
+                    .frame(width: sliderHeight * 1.5, height: sliderHeight * 1.5)
                     .position(x: knobPosition, y: sliderHeight / 2)
                     .gesture(
                         DragGesture()
@@ -158,11 +156,12 @@ struct FeelingSlider: View {
                                 }
                                 let newValue = Double(value.location.x / geometry.size.width) * Double(feelings.count - 1)
                                 feelingSlide = max(0, min(Double(feelings.count - 1), newValue))
+                                onSlideChanged(feelingSlide) // Call closure
                             }
                             .onEnded { _ in
                                 isDragging = false
                                 withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
-                                    sliderHeight = 10
+                                    sliderHeight = 20
                                 }
                             }
                     )
